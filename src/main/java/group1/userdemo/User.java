@@ -35,6 +35,15 @@ public class User {
 
 
     //getter && setter
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getLoginSource() {
         return loginSource;
     }

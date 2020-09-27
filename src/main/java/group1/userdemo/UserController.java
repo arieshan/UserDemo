@@ -1,5 +1,6 @@
 package group1.userdemo;
 
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/v1")
 public class UserController {
+    private final Logger logger = Logger.getLogger(this.getClass());
+
     @Autowired
     private UserRepository userRepository;
 
