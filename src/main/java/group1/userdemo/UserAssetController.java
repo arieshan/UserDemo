@@ -35,11 +35,6 @@ public class UserAssetController {
     // POST method to create a userAsset
     @PostMapping("/user_assets")
     public UserAsset createUserAsset(@Valid @RequestBody UserAsset userAsset) {
-        logger.log(Logger.Level.INFO, "--------- " + userAsset.getContent());
-        logger.log(Logger.Level.INFO, "--------- " + userAsset.getAssetType());
-
-        logger.log(Logger.Level.INFO, "--------- " + userAsset.getUserId());
-
         return userAssetRepository.save(userAsset);
     }
 
@@ -53,6 +48,8 @@ public class UserAssetController {
         userAsset.setUserId(userAssetDetails.getUserId());
         userAsset.setContent(userAssetDetails.getContent());
         userAsset.setAssetType(userAssetDetails.getAssetType());
+        userAsset.setLanguageFrom(userAssetDetails.getLanguageFrom());
+        userAsset.setLanguageTo(userAssetDetails.getLanguageTo());
 
         final UserAsset updatedUserAsset = userAssetRepository.save(userAsset);
         return ResponseEntity.ok(updatedUserAsset);

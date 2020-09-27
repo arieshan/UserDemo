@@ -22,6 +22,11 @@ public class UserAsset {
     @Column(name = "content", nullable = false)
     private String content;
 
+    @Column(name = "languageFrom", nullable = false)
+    private String languageFrom;
+
+    @Column(name = "languageTo", nullable = false)
+    private String languageTo;
 
 
     //getter && setter
@@ -47,6 +52,22 @@ public class UserAsset {
 
     public void setAssetType(String assetType) {
         this.assetType = assetType;
+    }
+
+    public String getLanguageFrom() {
+        return languageFrom;
+    }
+
+    public void setLanguageFrom(String value) {
+        this.languageFrom = value;
+    }
+
+    public String getLanguageTo() {
+        return languageTo;
+    }
+
+    public void setLanguageTo(String value) {
+        this.languageTo = value;
     }
 
 }

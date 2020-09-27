@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
+import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,7 +46,8 @@ public class UserController {
         user.setEmail(userDetails.getEmail());
         user.setFirstname(userDetails.getFirstname());
         user.setLastname(userDetails.getLastname());
-        user.setPassword(userDetails.getPassword());
+        user.setLogoutTime(userDetails.getLogoutTime());
+        user.setLoginSource(user.getLoginSource());
 
         final User updatedUser = userRepository.save(user);
         return ResponseEntity.ok(updatedUser);
